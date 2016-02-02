@@ -1,4 +1,8 @@
-<h5>Log In</h5>
+<h1>Welcome to Quoter!</h1>
+
+<h3>A messaging app for Quotes of the Day</h3>
+
+<h5>Log In!</h5>
 <%= form_for :sessions, url: sessions_path do |f| %>
   <p>
     <%=f.label :email %>
@@ -14,3 +18,8 @@
      <%= f.submit "Log In", class: 'button tiny radius' %>
   </p>
 <% end %>
+
+<p>Don't have an account?</p>
+<div class="">
+<%= link_to 'Sign Up', users_path, method: :get %>
+</div>

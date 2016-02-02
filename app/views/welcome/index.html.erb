@@ -1,3 +1,4 @@
+<h1>Not the right page</h1>
 <h1>Welcome to Quoter!</h1>
 
 <h3>A messaging app for Quotes of the Day</h3>
@@ -10,7 +11,7 @@
 
       <%= f.label :password %>
       <%= f.password_field :password %>
-      <%= link_to 'Sign In', new_sessions_path%>
+      <%= link_to 'Sign In', :controller=> "sessions", :action=>"create" %>
       <!--This button doesn't work for some reason-->
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
