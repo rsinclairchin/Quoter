@@ -2,6 +2,25 @@
 
 <h3>A messaging app for Quotes of the Day</h3>
 
-<div id="login_box">
-  <table role='grid'>
-    <tr>
+<h5>Sign In!</h5>
+<%= form_for :login, url: login_path do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <%= link_to 'Sign In', new_sessions_path%>
+      <!--This button doesn't work for some reason-->
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+
+
+<p>Don't have an account?</p>
+<div class="">
+<%= button_to "Register",{:controller => "users", :action => "new", method: :get} %>
+</div>
+
+<%= button_to "Login",{:controller => "sessions", :action => "new", method: :get}%>
+

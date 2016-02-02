@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-  before_action do
-    authorize User
-  end
+  # before_action do
+  #   authorize User
+  # end
 
   def index
     @users = User.order(:last_name)
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to users_path
     else
       render 'new'
     end
