@@ -33,3 +33,5 @@ def destroy
   @contact = Contact.find(params[:id]).destroy
   redirect_to contacts
 end
+
+end
