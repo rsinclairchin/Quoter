@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to users_path
     else
-      render 'new'
+      render '/users/new'
     end
   end
 
