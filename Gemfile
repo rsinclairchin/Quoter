@@ -34,6 +34,9 @@ gem 'pundit'
 # gem 'capistrano-rails', group: :development
 gem 'twilio-ruby', '~> 4.2.1'
 
+#HOW TO USE, Read here -> https://github.com/bkeepers/dotenv
+gem 'dotenv-rails', :groups => [:development, :test]
+
 group :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
