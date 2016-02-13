@@ -1,5 +1,6 @@
 <div>
   <form action="/messages" method="POST">
+
     <select name="id">
       <% @contacts.each do |contact| %>
           <option value="<%= contact.id %>"><%= contact.first_name + " " + contact.last_name %></option>
