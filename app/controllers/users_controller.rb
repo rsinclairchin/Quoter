@@ -31,9 +31,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to @user
+    #if @user.update(user_params)
+    if @user.update_attributes(user_params)
+      flash[:success] = "Info updated"
+      redirect_to user_url(@user)
     else
+      flash[:danger] = "Edits did not save, try again"
       render 'edit'
     end
   end
