@@ -2,7 +2,7 @@
   <p>Welcome <%= @user.first_name %> <%= @user.last_name %> </p>
 
   <p>EMAIL: <%= @user.email %></p>
-  <% if current_user && logged_in? %>
+  <% if current_user %>
     <%= link_to 'Edit User', edit_user_path(current_user), class: 'button tiny radius' %> |
     <%= link_to 'Delete User', user_path(@user), method: :delete, class: 'button tiny radius'%> |
     <%= link_to 'Logout', logout_path, method: :delete %>

@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:id] = nil
+    log_out
     redirect_to root_path
   end
 
