@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_save { self.email = email.downcase }
   has_secure_password
   has_many :contacts
   has_many :messages
