@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-
+  # before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, only: [:index, :edit, :update]
   def new
   end
 
@@ -15,7 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:id] = nil
+    log_out
     redirect_to root_path
   end
 
