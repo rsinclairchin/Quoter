@@ -6,15 +6,16 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email: params[:sessions][:email])
     if @user && @user.authenticate(params[:sessions][:password])
-      session[:user_id] = @user.id
-      redirect_to users_path
+       log_in @user
+       redirect_to user_url(@user)
     else
+      flash[:danger] = 'Invalid email or password'
       render 'new'
     end
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:id] = nil
     redirect_to root_path
   end
 

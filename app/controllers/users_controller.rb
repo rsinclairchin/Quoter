@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
-  # before_action do
-  #   authorize User
-  # end
+  def show
+    @user = User.find(params[:id])
+  end
 
   def index
-    @users = User.order(:last_name)
+    @users = User.all
   end
 
   def new
@@ -13,21 +13,20 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by(email: params[:email])
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to users_path
+      flash[:success] = "You're now a Quoter!"
+      #session[:user_id] = @user.id
+      # redirect_to users_path
+      redirect_to user_url(@user)
     else
-      render '/users/new'
+      flash[:danger] = "User did not save, try again"
+      render 'new'
     end
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   def update

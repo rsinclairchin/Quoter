@@ -13,7 +13,8 @@ class MessagesController < ApplicationController
 
     # account_sid = ENV["TWILIO_SID"]
     # auth_token = ENV["TWILIO_AUTH_TOKEN"]
-
+    account_sid = ""
+    auth_token = ""
 
     # p account_sid
     # p auth_token

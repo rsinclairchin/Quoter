@@ -14,3 +14,27 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// $(document).ready(function() {
+
+//   loginForm();
+
+// });
+
+// var loginForm = function(){
+//   $("#loginLink").on("click", function(event){
+//     event.preventDefault();
+
+//     var request = $.ajax({
+//       url: "/users/new",
+//       method: "get",
+//       dataType: "html",
+//     })
+
+//     request.done(function(response){
+//       $("#signUp").append(response)
+//       $("#registerLink").hide()
+//     });
+//   });
+
+// };

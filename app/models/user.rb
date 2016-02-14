@@ -3,5 +3,6 @@ class User < ActiveRecord::Base
   has_many :contacts
   has_many :messages
   validates :first_name, :last_name, :email, presence: true
+  has_secure_password
   validates :password, :length => { :minimum => 5, allow_nil: true }
 end

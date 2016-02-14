@@ -1,1 +1,18 @@
-<h1>Hello <%=@user.first_name%></h1>
+<div class='container'>
+  <p>Welcome <%= @user.first_name %> <%= @user.last_name %> </p>
+
+  <p>EMAIL: <%= @user.email %></p>
+  <% if current_user %>
+    <%= link_to 'Edit User', edit_user_path(@user), class: 'button tiny radius' %> |
+    <%= link_to 'Delete User', user_path(@user), method: :delete, class: 'button tiny radius'%> |
+    <%= link_to 'Logout', logout_path, method: :delete %>
+  <%end %>
+</div>
+
+
+<div class='container'>
+  <ul>
+    <li><%= link_to 'Contacts', contacts_path, method: :get %></li>
+    <li><%= link_to 'Messages', new_message_path, method: :get %></li>
+  </ul>
+</div>
