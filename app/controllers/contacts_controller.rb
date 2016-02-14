@@ -13,7 +13,7 @@ def edit
 end
 
 def create
-  @contact = Contact.new(contact_params)
+  @contact = Contact.new(first_name: params[:name], number: params[:number])
 end
 
 def show
