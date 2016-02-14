@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
 
-  # before_action do
-  #   authorize User
-  # end
-
   def index
-    @users = User.order(:last_name)
+    @user = User.find(params[:id])
   end
 
   def new
@@ -13,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by(email: params[:email])
   end
 
   def create
