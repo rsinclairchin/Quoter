@@ -22,3 +22,13 @@
   color: white;
   font-family: Helvetica;
 }
+
+.flash {
+  font-family: Helvetica;
+  background-color: #039f8f;
+  padding: 10px;
+  margin: 30px auto;
+  border-radius: 20px;
+  width: 30%;
+  color: white;
+}

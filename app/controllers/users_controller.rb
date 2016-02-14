@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
-  def index
+  def show
     @user = User.find(params[:id])
+  end
+
+  def index
+    @users = User.all
   end
 
   def new
@@ -15,15 +19,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to users_path
+      flash[:success] = "You're now a Quoter!"
+      #session[:user_id] = @user.id
+      # redirect_to users_path
+      redirect_to user_url(@user)
     else
-      render '/users/new'
+      flash[:danger] = "User did not save, try again"
+      render 'new'
     end
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   def update
