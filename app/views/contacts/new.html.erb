@@ -1,6 +1,6 @@
 <h5>Add New Contact</h5>
 
-<%= form_for @contact do |f| %>
+<%= form_for @contact, url: {action: "create"} do |f| %>
 <% if @contact && @contact.errors.any? %>
     <div id="error_explanation">
       <h2>
