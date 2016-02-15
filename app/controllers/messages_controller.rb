@@ -13,8 +13,8 @@ class MessagesController < ApplicationController
     @contact = Contact.find(params[:id])
     @source = Resource.find(params[:api_id])
 
-    account_sid = ""
-    auth_token = ""
+    ACCOUNT_SID = ""
+    AUTH_TOKEN = ""
 
     @client = Twilio::REST::Client.new account_sid, auth_token
 
